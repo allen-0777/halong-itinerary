@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="9/4 至 9/6 下龍灣三天兩夜個人行程書，包含每日安排、住宿與餐食。">
-  <title>下龍灣小旅行｜9/4 至 9/6</title>
+  <meta name="description" content="Lịch trình cá nhân 3 ngày 2 đêm ở Hạ Long từ 9/4 đến 9/6, gồm lịch trình mỗi ngày, khách sạn và bữa ăn.">
+  <title>Chuyến đi Hạ Long｜9/4 - 9/6</title>
   <style>
     :root {
       --ink: #24282f;
@@ -81,6 +81,44 @@
 
     .cover {
       padding: 44px 0 26px;
+    }
+
+    .language-bar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 800;
+    }
+
+    .language-toggle {
+      display: inline-grid;
+      grid-template-columns: repeat(2, minmax(104px, 1fr));
+      gap: 4px;
+      padding: 4px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+
+    .language-button {
+      min-height: 40px;
+      padding: 8px 12px;
+      border: 0;
+      border-radius: calc(var(--radius) - 2px);
+      background: transparent;
+      color: var(--red-dark);
+      cursor: pointer;
+      font-weight: 900;
+      transition: background 180ms ease, color 180ms ease;
+    }
+
+    .language-button.is-active {
+      background: var(--red);
+      color: #ffffff;
     }
 
     .cover-card {
@@ -257,6 +295,7 @@
     }
 
     .button:focus-visible,
+    .language-button:focus-visible,
     .day-nav a:focus-visible,
     .skip-link:focus-visible {
       outline: 3px solid var(--gold);
@@ -297,7 +336,8 @@
     }
 
     .day-sheet {
-      margin-top: 28px;
+      width: min(var(--container), calc(100% - 32px));
+      margin: 28px auto 0;
       padding: 0 0 36px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -557,6 +597,16 @@
         padding-top: 18px;
       }
 
+      .language-bar {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .language-toggle {
+        width: 100%;
+      }
+
       .cover-card {
         padding: 16px;
       }
@@ -580,6 +630,10 @@
 
       main {
         padding-top: 24px;
+      }
+
+      .day-sheet {
+        width: min(100% - 24px, var(--container));
       }
 
       .day-heading {
@@ -653,6 +707,13 @@
 
   <header class="cover">
     <div class="shell">
+      <div class="language-bar" aria-label="Language">
+        <span class="language-label">Ngôn ngữ</span>
+        <div class="language-toggle" role="group" aria-label="Language switcher">
+          <button class="language-button is-active" type="button" data-language="vi" aria-pressed="true">Tiếng Việt</button>
+          <button class="language-button" type="button" data-language="zh" aria-pressed="false">中文</button>
+        </div>
+      </div>
       <section class="cover-card" aria-labelledby="cover-title">
         <div class="cover-copy">
           <p class="eyebrow">Ha Long Bay｜9/4 - 9/6</p>
@@ -663,13 +724,13 @@
           </p>
           <div class="cover-actions">
             <a class="button button-primary" href="#day-0904">看第一天</a>
-            <button class="button" type="button" onclick="window.print()" aria-label="列印行程">
+            <button class="button print-button" type="button" onclick="window.print()" aria-label="列印行程">
               <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M6 9V2h12v7"></path>
                 <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
                 <path d="M6 14h12v8H6z"></path>
               </svg>
-              列印
+              <span class="button-text">列印</span>
             </button>
           </div>
           <ul class="cover-facts" aria-label="行程重點">
@@ -916,7 +977,7 @@
           <div class="schedule-row"><div class="schedule-time">11:15</div><div class="schedule-text">簡單吃飯或外帶點心</div></div>
           <div class="schedule-row"><div class="schedule-time">11:30 前</div><div class="schedule-text">出發返回興安省 Ân Thi</div></div>
           <div class="schedule-row"><div class="schedule-time">14:30-15:30</div><div class="schedule-text">預計抵達 Ân Thi</div></div>
-          <div class="schedule-row"><div class="schedule-time">16:00 前</div><div class="schedule-text">必須抵達</div></div>
+          <div class="schedule-row"><div class="schedule-time">16:00 前</div><div class="schedule-text">返回 Ân Thi</div></div>
         </section>
 
         <div class="info-grid">
@@ -950,12 +1011,265 @@
     <div class="shell">
       <p>下龍灣 9/4 至 9/6 個人行程書｜Allen Trip Notes</p>
       <p class="credits">
-        每日照片來源：
+        <span class="credits-prefix">每日照片來源：</span>
         <a href="https://en.wikipedia.org/wiki/B%C3%A3i_Ch%C3%A1y">Bãi Cháy / Wikimedia</a>、
         <a href="https://en.wikipedia.org/wiki/H%E1%BA%A1_Long_Bay">Hạ Long Bay / Wikimedia</a>、
         <a href="https://sunparadiseland.com/en/SunParadiseLandQuangNinh/tin-tuc/discover-a-new-perspective-of-quang-ninh-from-the-queen-cable-car-a-journey-flying-amidst-wonders-11773">Queen Cable Car / Sun Paradise Land</a>
       </p>
     </div>
   </footer>
+  <script>
+    (() => {
+      const translations = {
+        zh: {
+          lang: "zh-Hant",
+          title: "下龍灣小旅行｜9/4 至 9/6",
+          description: "9/4 至 9/6 下龍灣三天兩夜個人行程書，包含每日安排、住宿與餐食。",
+          text: [
+            [".skip-link", "跳到行程內容"],
+            [".language-label", "語言"],
+            ["#cover-title", "下龍灣三天兩夜小旅行"],
+            [".cover-lead", "這份行程先把「怎麼走、住哪裡、吃什麼」整理好。步調不用太滿，我們就照著天氣和體力慢慢玩，想休息的時候也不用硬撐。"],
+            [".cover-actions .button-primary", "看第一天"],
+            [".print-button .button-text", "列印"],
+            [".cover-facts li:nth-child(1)", "住宿：Wyndham Garden Legend Halong"],
+            [".cover-facts li:nth-child(2)", "9/4：Valley Beach Club"],
+            [".cover-facts li:nth-child(3)", "9/5：Cabi Beach Club"],
+            [".cover-photo .photo-label", "下龍灣，慢慢來就好"],
+            [".intro-item:nth-child(1) b", "這次的節奏"],
+            [".intro-item:nth-child(1) p", "一天抓一個主要重點，其他時間留給交通、洗澡、放空和臨時想吃的東西。"],
+            [".intro-item:nth-child(2) b", "住宿中心"],
+            [".intro-item:nth-child(2) p", "兩晚都以 Wyndham Garden Legend Halong 為中心，移動路線比較單純。"],
+            [".intro-item:nth-child(3) b", "餐食想法"],
+            [".intro-item:nth-child(3) p", "早餐以飯店為主，午餐吃海鮮或簡單解決，晚上安排海邊氣氛。"],
+            ["#day-0904 .day-badge span", "DAY 1"],
+            ["#day-0904 .day-badge small", "2026/09/04（五）"],
+            ["#day-0904-title", "河內出發／入住 Wyndham／Bãi Cháy Beach／Valley Beach Club"],
+            ["#day-0904 .personal-note", "第一天先不要急著排太滿。從河內出發到下龍灣後，先把行李放好、把自己整理舒服，下午去海邊玩水，晚上就直接去 Valley Beach Club，吃飯、拍照、看海邊氣氛。"],
+            ["#day-0904 .section-kicker", "TODAY"],
+            ["#day-0904-place", "今天的重點：先抵達，先放鬆"],
+            ["#day-0904 .place-block p:last-child", "抵達飯店後先不趕行程，留一點時間洗澡和休息。這天最重要的是把旅遊模式打開，晚上在 Valley Beach Club 慢慢收尾就好。"],
+            ["#day-0904 .trip-photo:nth-child(1) .photo-label", "Bãi Cháy 抵達感"],
+            ["#day-0904 .trip-photo:nth-child(2) .photo-label", "下龍灣第一眼"],
+            ["#day-0904 .schedule-row:nth-child(1) .schedule-text", "從河內出發前往下龍灣"],
+            ["#day-0904 .schedule-row:nth-child(2) .schedule-text", "抵達 Wyndham Garden Legend Halong，放行李或辦入住"],
+            ["#day-0904 .schedule-row:nth-child(3) .schedule-text", "Bãi Cháy Beach 玩水"],
+            ["#day-0904 .schedule-row:nth-child(4) .schedule-text", "回飯店洗澡、休息"],
+            ["#day-0904 .schedule-row:nth-child(5) .schedule-text", "Valley Beach Club 晚餐、拍照、喝飲料、看海邊氣氛"],
+            ["#day-0904 .schedule-row:nth-child(6) .schedule-text", "回飯店休息"],
+            ["#day-0904-meals", "餐食"],
+            ["#day-0904-meals + p", "早：河內出發前簡單吃"],
+            ["#day-0904-meals + p + p", "午：路上或抵達後簡單解決"],
+            ["#day-0904-meals + p + p + p", "晚：Valley Beach Club"],
+            ["#day-0904-hotel", "住宿"],
+            ["#day-0904-hotel + p", "Wyndham Garden Legend Halong"],
+            ["#day-0904-hotel + p + p", "兩晚都住同一間，行李不用每天整理，會輕鬆很多。"],
+            ["#day-0905 .day-badge span", "DAY 2"],
+            ["#day-0905 .day-badge small", "2026/09/05（六）"],
+            ["#day-0905-title", "Hồng Hạnh 8 午餐／Vincom Plaza／Cabi Beach Club"],
+            ["#day-0905 .personal-note", "第二天就把節奏放在「吃好一點、躲一下熱、晚上再出去」。中午吃海鮮，下午到 Vincom 吹冷氣，傍晚回飯店整理，晚上再去 Cabi Beach Club。"],
+            ["#day-0905 .section-kicker", "TODAY"],
+            ["#day-0905-place", "今天的重點：午餐好好吃，晚上好好坐"],
+            ["#day-0905 .place-block p:last-child", "這天不用把景點塞滿，讓午餐、休息和晚上氣氛自然接起來。下午回飯店補一下體力，晚上出門狀態會比較好。"],
+            ["#day-0905 .trip-photo:nth-child(1) .photo-label", "海鮮午餐的下龍灣味道"],
+            ["#day-0905 .trip-photo:nth-child(2) .photo-label", "下午留給海風和放空"],
+            ["#day-0905 .schedule-row:nth-child(1) .schedule-text", "從 Wyndham 出發"],
+            ["#day-0905 .schedule-row:nth-child(2) .schedule-text", "Hồng Hạnh 8 午餐"],
+            ["#day-0905 .schedule-row:nth-child(3) .schedule-text", "Vincom Plaza Hạ Long 逛街、吹冷氣"],
+            ["#day-0905 .schedule-row:nth-child(4) .schedule-text", "回 Wyndham"],
+            ["#day-0905 .schedule-row:nth-child(5) .schedule-text", "洗澡、換衣服、休息"],
+            ["#day-0905 .schedule-row:nth-child(6) .schedule-text", "從 Wyndham 前往 Cabi Beach Club"],
+            ["#day-0905 .schedule-row:nth-child(7) .schedule-text", "Cabi Beach Club 晚餐、拍照、看海邊氣氛"],
+            ["#day-0905 .schedule-row:nth-child(8) .schedule-text", "回 Wyndham 休息"],
+            ["#day-0905-meals", "餐食"],
+            ["#day-0905-meals + p", "早：飯店早餐"],
+            ["#day-0905-meals + p + p", "午：Hồng Hạnh 8"],
+            ["#day-0905-meals + p + p + p", "晚：Cabi Beach Club"],
+            ["#day-0905-hotel", "住宿"],
+            ["#day-0905-hotel + p", "Wyndham Garden Legend Halong"],
+            ["#day-0905-hotel + p + p", "晚上回同一間飯店，路線單純，隔天退房也比較好掌握。"],
+            ["#day-0906 .day-badge span", "DAY 3"],
+            ["#day-0906 .day-badge small", "2026/09/06（日）"],
+            ["#day-0906-title", "Queen Cable Car／退房／返回興安省 Ân Thi"],
+            ["#day-0906 .personal-note", "最後一天以回程為主，早上如果精神不錯就去搭 Queen Cable Car。中午前把行李拿好，11:30 前離開下龍灣，目標是 16:00 前抵達 Ân Thi。"],
+            ["#day-0906 .section-kicker", "TODAY"],
+            ["#day-0906-place", "今天的重點：不要趕，準時回去"],
+            ["#day-0906 .place-block p:last-child", "回程日最怕時間壓太緊，所以早上的活動抓短一點。只要身體覺得累，就把纜車改成下次再來，提早出發也完全可以。"],
+            ["#day-0906 .trip-photo:nth-child(1) .photo-label", "Queen Cable Car"],
+            ["#day-0906 .trip-photo:nth-child(2) .photo-label", "帶著海景回家"],
+            ["#day-0906 .schedule-row:nth-child(1) .schedule-text", "早餐"],
+            ["#day-0906 .schedule-row:nth-child(2) .schedule-text", "退房或寄放行李"],
+            ["#day-0906 .schedule-row:nth-child(3) .schedule-text", "Queen Cable Car"],
+            ["#day-0906 .schedule-row:nth-child(4) .schedule-text", "回 Wyndham 拿行李"],
+            ["#day-0906 .schedule-row:nth-child(5) .schedule-text", "最晚退房"],
+            ["#day-0906 .schedule-row:nth-child(6) .schedule-text", "簡單吃飯或外帶點心"],
+            ["#day-0906 .schedule-row:nth-child(7) .schedule-text", "出發返回興安省 Ân Thi"],
+            ["#day-0906 .schedule-row:nth-child(8) .schedule-text", "預計抵達 Ân Thi"],
+            ["#day-0906 .schedule-row:nth-child(9) .schedule-text", "返回 Ân Thi"],
+            ["#day-0906-meals", "餐食"],
+            ["#day-0906-meals + p", "早：飯店早餐"],
+            ["#day-0906-meals + p + p", "午：簡單吃飯或外帶點心"],
+            ["#day-0906-meals + p + p + p", "晚：抵達 Ân Thi 後再安排"],
+            ["#day-0906-hotel", "住宿"],
+            ["#day-0906-hotel + p", "退房日，不續住下龍灣"],
+            ["#day-0906-hotel + p + p", "拿好行李後返回興安省 Ân Thi，今天重點是準時抵達。"],
+            [".site-footer .shell > p:first-child", "下龍灣 9/4 至 9/6 個人行程書｜Allen Trip Notes"],
+            [".credits-prefix", "每日照片來源："]
+          ],
+          time: [
+            ["#day-0906 .schedule-row:nth-child(7) .schedule-time", "11:30 前"],
+            ["#day-0906 .schedule-row:nth-child(9) .schedule-time", "16:00 前"]
+          ],
+          aria: [
+            [".language-bar", "語言切換"],
+            [".language-toggle", "語言切換"],
+            [".print-button", "列印行程"],
+            [".cover-facts", "行程重點"],
+            [".day-nav", "行程導覽"]
+          ]
+        },
+        vi: {
+          lang: "vi",
+          title: "Chuyến đi Hạ Long｜9/4 - 9/6",
+          description: "Lịch trình cá nhân 3 ngày 2 đêm ở Hạ Long từ 9/4 đến 9/6, gồm lịch trình mỗi ngày, khách sạn và bữa ăn.",
+          text: [
+            [".skip-link", "Bỏ qua đến nội dung lịch trình"],
+            [".language-label", "Ngôn ngữ"],
+            ["#cover-title", "Chuyến đi Hạ Long 3 ngày 2 đêm"],
+            [".cover-lead", "Mình đã sắp xếp trước chuyện đi lại, chỗ ở và ăn uống. Lịch trình không cần quá dày; cứ theo thời tiết và sức khỏe mà đi chậm rãi, khi cần nghỉ thì nghỉ."],
+            [".cover-actions .button-primary", "Xem ngày đầu"],
+            [".print-button .button-text", "In lịch trình"],
+            [".cover-facts li:nth-child(1)", "Khách sạn: Wyndham Garden Legend Halong"],
+            [".cover-facts li:nth-child(2)", "9/4: Valley Beach Club"],
+            [".cover-facts li:nth-child(3)", "9/5: Cabi Beach Club"],
+            [".cover-photo .photo-label", "Hạ Long, cứ thong thả là được"],
+            [".intro-item:nth-child(1) b", "Nhịp điệu chuyến đi"],
+            [".intro-item:nth-child(1) p", "Mỗi ngày chỉ giữ một điểm chính; phần còn lại dành cho di chuyển, tắm rửa, nghỉ ngơi và những món muốn ăn bất chợt."],
+            [".intro-item:nth-child(2) b", "Trung tâm lưu trú"],
+            [".intro-item:nth-child(2) p", "Hai đêm đều ở Wyndham Garden Legend Halong, nên đường đi đơn giản hơn."],
+            [".intro-item:nth-child(3) b", "Ý tưởng bữa ăn"],
+            [".intro-item:nth-child(3) p", "Bữa sáng chủ yếu ở khách sạn, bữa trưa ăn hải sản hoặc ăn nhẹ, buổi tối ưu tiên không khí bên biển."],
+            ["#day-0904 .day-badge span", "NGÀY 1"],
+            ["#day-0904 .day-badge small", "2026/09/04 (Thứ Sáu)"],
+            ["#day-0904-title", "Rời Hà Nội / nhận phòng Wyndham / bãi biển Bãi Cháy / Valley Beach Club"],
+            ["#day-0904 .personal-note", "Ngày đầu tiên đừng xếp quá kín. Sau khi đi từ Hà Nội đến Hạ Long, mình để hành lý xuống, chỉnh trang cho thoải mái, chiều ra biển chơi nước, tối đi thẳng Valley Beach Club để ăn tối, chụp ảnh và tận hưởng không khí bên biển."],
+            ["#day-0904 .section-kicker", "HÔM NAY"],
+            ["#day-0904-place", "Trọng tâm hôm nay: đến nơi trước, rồi thư giãn"],
+            ["#day-0904 .place-block p:last-child", "Sau khi đến khách sạn, mình không vội chạy lịch trình; chừa thời gian tắm rửa và nghỉ. Điều quan trọng nhất là chuyển sang chế độ du lịch, tối khép lại nhẹ nhàng ở Valley Beach Club."],
+            ["#day-0904 .trip-photo:nth-child(1) .photo-label", "Cảm giác vừa đến Bãi Cháy"],
+            ["#day-0904 .trip-photo:nth-child(2) .photo-label", "Cái nhìn đầu tiên về Hạ Long"],
+            ["#day-0904 .schedule-row:nth-child(1) .schedule-text", "Rời Hà Nội đi Hạ Long"],
+            ["#day-0904 .schedule-row:nth-child(2) .schedule-text", "Đến Wyndham Garden Legend Halong, gửi hành lý hoặc làm thủ tục nhận phòng"],
+            ["#day-0904 .schedule-row:nth-child(3) .schedule-text", "Chơi nước ở bãi biển Bãi Cháy"],
+            ["#day-0904 .schedule-row:nth-child(4) .schedule-text", "Về khách sạn tắm rửa, nghỉ ngơi"],
+            ["#day-0904 .schedule-row:nth-child(5) .schedule-text", "Ăn tối ở Valley Beach Club, chụp ảnh, uống đồ uống, ngắm không khí biển"],
+            ["#day-0904 .schedule-row:nth-child(6) .schedule-text", "Về khách sạn nghỉ ngơi"],
+            ["#day-0904-meals", "Bữa ăn"],
+            ["#day-0904-meals + p", "Sáng: ăn nhẹ trước khi rời Hà Nội"],
+            ["#day-0904-meals + p + p", "Trưa: ăn nhẹ trên đường hoặc sau khi đến nơi"],
+            ["#day-0904-meals + p + p + p", "Tối: Valley Beach Club"],
+            ["#day-0904-hotel", "Lưu trú"],
+            ["#day-0904-hotel + p", "Wyndham Garden Legend Halong"],
+            ["#day-0904-hotel + p + p", "Ở cùng một khách sạn trong 2 đêm, không cần dọn hành lý mỗi ngày nên sẽ nhẹ nhàng hơn."],
+            ["#day-0905 .day-badge span", "NGÀY 2"],
+            ["#day-0905 .day-badge small", "2026/09/05 (Thứ Bảy)"],
+            ["#day-0905-title", "Ăn trưa Hồng Hạnh 8 / Vincom Plaza / Cabi Beach Club"],
+            ["#day-0905 .personal-note", "Ngày thứ hai tập trung vào việc ăn ngon, tránh nóng một chút, rồi tối mới ra ngoài. Trưa ăn hải sản, chiều vào Vincom hưởng máy lạnh, gần tối về khách sạn chỉnh trang, tối đi Cabi Beach Club."],
+            ["#day-0905 .section-kicker", "HÔM NAY"],
+            ["#day-0905-place", "Trọng tâm hôm nay: ăn trưa thật ngon, tối ngồi thật thoải mái"],
+            ["#day-0905 .place-block p:last-child", "Không cần nhồi quá nhiều điểm tham quan; để bữa trưa, nghỉ ngơi và buổi tối nối nhau tự nhiên. Chiều về khách sạn nạp lại năng lượng, tối ra ngoài sẽ thoải mái hơn."],
+            ["#day-0905 .trip-photo:nth-child(1) .photo-label", "Hương vị Hạ Long cho bữa trưa hải sản"],
+            ["#day-0905 .trip-photo:nth-child(2) .photo-label", "Buổi chiều dành cho gió biển và thả lỏng"],
+            ["#day-0905 .schedule-row:nth-child(1) .schedule-text", "Rời Wyndham"],
+            ["#day-0905 .schedule-row:nth-child(2) .schedule-text", "Ăn trưa tại Hồng Hạnh 8"],
+            ["#day-0905 .schedule-row:nth-child(3) .schedule-text", "Dạo Vincom Plaza Hạ Long, nghỉ máy lạnh"],
+            ["#day-0905 .schedule-row:nth-child(4) .schedule-text", "Về Wyndham"],
+            ["#day-0905 .schedule-row:nth-child(5) .schedule-text", "Tắm rửa, thay đồ, nghỉ ngơi"],
+            ["#day-0905 .schedule-row:nth-child(6) .schedule-text", "Từ Wyndham đến Cabi Beach Club"],
+            ["#day-0905 .schedule-row:nth-child(7) .schedule-text", "Ăn tối ở Cabi Beach Club, chụp ảnh, ngắm không khí biển"],
+            ["#day-0905 .schedule-row:nth-child(8) .schedule-text", "Về Wyndham nghỉ ngơi"],
+            ["#day-0905-meals", "Bữa ăn"],
+            ["#day-0905-meals + p", "Sáng: bữa sáng ở khách sạn"],
+            ["#day-0905-meals + p + p", "Trưa: Hồng Hạnh 8"],
+            ["#day-0905-meals + p + p + p", "Tối: Cabi Beach Club"],
+            ["#day-0905-hotel", "Lưu trú"],
+            ["#day-0905-hotel + p", "Wyndham Garden Legend Halong"],
+            ["#day-0905-hotel + p + p", "Tối về cùng một khách sạn, đường đi đơn giản, hôm sau trả phòng cũng dễ kiểm soát hơn."],
+            ["#day-0906 .day-badge span", "NGÀY 3"],
+            ["#day-0906 .day-badge small", "2026/09/06 (Chủ Nhật)"],
+            ["#day-0906-title", "Queen Cable Car / trả phòng / về Ân Thi, Hưng Yên"],
+            ["#day-0906 .personal-note", "Ngày cuối chủ yếu dành cho đường về. Nếu buổi sáng còn khỏe thì đi Queen Cable Car. Trước trưa lấy hành lý xong, rời Hạ Long trước 11:30, mục tiêu là về đến Ân Thi trước 16:00."],
+            ["#day-0906 .section-kicker", "HÔM NAY"],
+            ["#day-0906-place", "Trọng tâm hôm nay: đừng vội, về đúng giờ"],
+            ["#day-0906 .place-block p:last-child", "Ngày về sợ nhất là dồn lịch quá sát, nên hoạt động buổi sáng giữ ngắn thôi. Nếu thấy mệt, có thể để cáp treo cho lần sau và xuất phát sớm hơn cũng hoàn toàn ổn."],
+            ["#day-0906 .trip-photo:nth-child(1) .photo-label", "Queen Cable Car"],
+            ["#day-0906 .trip-photo:nth-child(2) .photo-label", "Mang cảnh biển về nhà"],
+            ["#day-0906 .schedule-row:nth-child(1) .schedule-text", "Ăn sáng"],
+            ["#day-0906 .schedule-row:nth-child(2) .schedule-text", "Trả phòng hoặc gửi hành lý"],
+            ["#day-0906 .schedule-row:nth-child(3) .schedule-text", "Queen Cable Car"],
+            ["#day-0906 .schedule-row:nth-child(4) .schedule-text", "Về Wyndham lấy hành lý"],
+            ["#day-0906 .schedule-row:nth-child(5) .schedule-text", "Trả phòng muộn nhất"],
+            ["#day-0906 .schedule-row:nth-child(6) .schedule-text", "Ăn đơn giản hoặc mua đồ ăn mang đi"],
+            ["#day-0906 .schedule-row:nth-child(7) .schedule-text", "Xuất phát về Ân Thi, Hưng Yên"],
+            ["#day-0906 .schedule-row:nth-child(8) .schedule-text", "Dự kiến đến Ân Thi"],
+            ["#day-0906 .schedule-row:nth-child(9) .schedule-text", "Quay về Ân Thi"],
+            ["#day-0906-meals", "Bữa ăn"],
+            ["#day-0906-meals + p", "Sáng: bữa sáng ở khách sạn"],
+            ["#day-0906-meals + p + p", "Trưa: ăn đơn giản hoặc mua đồ ăn mang đi"],
+            ["#day-0906-meals + p + p + p", "Tối: sắp xếp sau khi đến Ân Thi"],
+            ["#day-0906-hotel", "Lưu trú"],
+            ["#day-0906-hotel + p", "Ngày trả phòng, không ở lại Hạ Long"],
+            ["#day-0906-hotel + p + p", "Lấy hành lý xong thì về Ân Thi, Hưng Yên; trọng tâm hôm nay là về đúng giờ."],
+            [".site-footer .shell > p:first-child", "Lịch trình cá nhân Hạ Long 9/4 đến 9/6｜Allen Trip Notes"],
+            [".credits-prefix", "Nguồn ảnh mỗi ngày:"]
+          ],
+          time: [
+            ["#day-0906 .schedule-row:nth-child(7) .schedule-time", "Trước 11:30"],
+            ["#day-0906 .schedule-row:nth-child(9) .schedule-time", "Trước 16:00"]
+          ],
+          aria: [
+            [".language-bar", "Chuyển ngôn ngữ"],
+            [".language-toggle", "Chuyển ngôn ngữ"],
+            [".print-button", "In lịch trình"],
+            [".cover-facts", "Điểm chính của lịch trình"],
+            [".day-nav", "Điều hướng lịch trình"]
+          ]
+        }
+      };
+
+      const applyLanguage = (language) => {
+        const copy = translations[language] || translations.vi;
+        document.documentElement.lang = copy.lang;
+        document.title = copy.title;
+        const description = document.querySelector('meta[name="description"]');
+        if (description) {
+          description.setAttribute("content", copy.description);
+        }
+        [...copy.text, ...copy.time].forEach(([selector, value]) => {
+          const element = document.querySelector(selector);
+          if (element) {
+            element.textContent = value;
+          }
+        });
+        copy.aria.forEach(([selector, value]) => {
+          const element = document.querySelector(selector);
+          if (element) {
+            element.setAttribute("aria-label", value);
+          }
+        });
+        document.querySelectorAll(".language-button").forEach((button) => {
+          const isActive = button.dataset.language === language;
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+      };
+
+      document.querySelectorAll(".language-button").forEach((button) => {
+        button.addEventListener("click", () => applyLanguage(button.dataset.language));
+      });
+
+      applyLanguage("vi");
+    })();
+  </script>
 </body>
 </html>
