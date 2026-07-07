@@ -313,7 +313,6 @@
     }
 
     .overview-card,
-    .tip-card,
     .timeline-card {
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -338,8 +337,7 @@
       line-height: 1.35;
     }
 
-    .overview-card p,
-    .tip-card p {
+    .overview-card p {
       margin-bottom: 0;
       color: var(--muted);
     }
@@ -468,62 +466,6 @@
       color: #8d342b;
     }
 
-    .callout {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 14px;
-      align-items: start;
-      margin-top: 22px;
-      padding: 18px;
-      border-left: 5px solid var(--leaf);
-      border-radius: var(--radius);
-      background: #eef8f1;
-      background: color-mix(in srgb, var(--leaf) 9%, white);
-    }
-
-    .callout b {
-      color: var(--leaf);
-      white-space: nowrap;
-    }
-
-    .callout p {
-      margin: 0;
-      color: var(--ink);
-      font-weight: 650;
-    }
-
-    .tips {
-      background: var(--sea-dark);
-      color: #ffffff;
-    }
-
-    .tips .kicker,
-    .tips .section-note {
-      color: rgba(255, 255, 255, 0.78);
-    }
-
-    .tips-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .tip-card {
-      padding: 20px;
-      border-color: rgba(255, 255, 255, 0.18);
-      background: rgba(255, 255, 255, 0.08);
-      box-shadow: none;
-    }
-
-    .tip-card h3 {
-      margin-bottom: 8px;
-      font-size: 1.1rem;
-    }
-
-    .tip-card p {
-      color: rgba(255, 255, 255, 0.78);
-    }
-
     .site-footer {
       padding: 26px 0;
       color: var(--muted);
@@ -559,8 +501,7 @@
         grid-template-columns: 1fr;
       }
 
-      .overview-grid,
-      .tips-grid {
+      .overview-grid {
         grid-template-columns: 1fr;
       }
 
@@ -636,8 +577,7 @@
         font-size: 2rem;
       }
 
-      .overview-card,
-      .tip-card {
+      .overview-card {
         padding: 18px;
       }
 
@@ -674,9 +614,6 @@
         font-size: 1.1rem;
       }
 
-      .callout {
-        grid-template-columns: 1fr;
-      }
     }
 
     @media (max-height: 520px) {
@@ -729,8 +666,7 @@
 
       .hero-facts li,
       .timeline-card,
-      .overview-card,
-      .tip-card {
+      .overview-card {
         box-shadow: none;
       }
 
@@ -793,7 +729,6 @@
       <a href="#day-0904">9/4</a>
       <a href="#day-0905">9/5</a>
       <a href="#day-0906">9/6</a>
-      <a href="#tips">提醒</a>
     </div>
   </nav>
 
@@ -866,10 +801,6 @@
           </li>
         </ol>
 
-        <div class="callout">
-          <b>備註</b>
-          <p>移動日以放鬆為主；晚上不再安排其他點，休息後直接去 Valley Beach Club。</p>
-        </div>
       </div>
     </section>
 
@@ -919,10 +850,6 @@
           </li>
         </ol>
 
-        <div class="callout">
-          <b>備註</b>
-          <p>晚上先回飯店整理再去 Cabi Beach Club，這樣路線最順，也比較不會趕。</p>
-        </div>
       </div>
     </section>
 
@@ -976,37 +903,6 @@
           </li>
         </ol>
 
-        <div class="callout">
-          <b>備註</b>
-          <p>回程日時間要抓鬆一點；如果當天太累，可以直接提早出發，跳過纜車。</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section tips" id="tips" aria-labelledby="tips-title">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="kicker">Before You Go</p>
-            <h2 id="tips-title">出發前小提醒</h2>
-          </div>
-          <p class="section-note">把會影響節奏的事情先確認，當天就能少一點臨場決定。</p>
-        </div>
-
-        <div class="tips-grid">
-          <article class="tip-card">
-            <h3>夜晚安排</h3>
-            <p>9/4 去 Valley Beach Club，9/5 去 Cabi Beach Club；出發前一天確認營業時間與是否需要訂位。</p>
-          </article>
-          <article class="tip-card">
-            <h3>避熱安排</h3>
-            <p>9/5 下午先去 Vincom 吹冷氣，再回飯店休息，晚上去海邊狀態會比較好。</p>
-          </article>
-          <article class="tip-card">
-            <h3>9/6 回程</h3>
-            <p>11:30 前離開下龍灣比較安全，目標 16:00 前抵達興安省 Ân Thi。</p>
-          </article>
-        </div>
       </div>
     </section>
   </main>
