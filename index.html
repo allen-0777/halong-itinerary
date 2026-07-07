@@ -299,35 +299,6 @@
       padding: 38px 0 64px;
     }
 
-    .intro {
-      margin-bottom: 30px;
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .intro-item {
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--paper);
-    }
-
-    .intro-item b {
-      display: block;
-      margin-bottom: 6px;
-      color: var(--red-dark);
-      font-size: 0.88rem;
-    }
-
-    .intro-item p {
-      margin-bottom: 0;
-      color: var(--muted);
-    }
-
     .day-sheet {
       width: min(var(--container), calc(100% - 32px));
       margin: 28px auto 0;
@@ -553,8 +524,7 @@
     }
 
     @media (max-width: 900px) {
-      .cover-card,
-      .intro-grid {
+      .cover-card {
         grid-template-columns: 1fr;
       }
 
@@ -738,23 +708,6 @@
   </nav>
 
   <main id="main">
-    <section class="intro">
-      <div class="shell intro-grid">
-        <article class="intro-item">
-          <b>這次的節奏</b>
-          <p>一天抓一個主要重點，其他時間留給交通、洗澡、放空和臨時想吃的東西。</p>
-        </article>
-        <article class="intro-item">
-          <b>住宿中心</b>
-          <p>兩晚都以 Wyndham Garden Legend Halong 為中心，移動路線比較單純。</p>
-        </article>
-        <article class="intro-item">
-          <b>餐食想法</b>
-          <p>早餐以飯店為主，午餐吃海鮮或簡單解決，晚上安排海邊氣氛。</p>
-        </article>
-      </div>
-    </section>
-
     <section class="day-sheet" id="day-0904" aria-labelledby="day-0904-title">
       <header class="day-heading">
         <div class="day-badge">
@@ -1009,12 +962,6 @@
             [".cover-facts li:nth-child(1)", "住宿：Wyndham Garden Legend Halong"],
             [".cover-facts li:nth-child(2)", "9/4：Valley Beach Club"],
             [".cover-facts li:nth-child(3)", "9/5：Cabi Beach Club"],
-            [".intro-item:nth-child(1) b", "這次的節奏"],
-            [".intro-item:nth-child(1) p", "一天抓一個主要重點，其他時間留給交通、洗澡、放空和臨時想吃的東西。"],
-            [".intro-item:nth-child(2) b", "住宿中心"],
-            [".intro-item:nth-child(2) p", "兩晚都以 Wyndham Garden Legend Halong 為中心，移動路線比較單純。"],
-            [".intro-item:nth-child(3) b", "餐食想法"],
-            [".intro-item:nth-child(3) p", "早餐以飯店為主，午餐吃海鮮或簡單解決，晚上安排海邊氣氛。"],
             ["#day-0904 .day-badge span", "DAY 1"],
             ["#day-0904 .day-badge small", "2026/09/04（五）"],
             ["#day-0904-title", "河內出發／入住 Wyndham／Bãi Cháy Beach／Valley Beach Club"],
@@ -1112,12 +1059,6 @@
             [".cover-facts li:nth-child(1)", "Khách sạn: Wyndham Garden Legend Halong"],
             [".cover-facts li:nth-child(2)", "9/4: Valley Beach Club"],
             [".cover-facts li:nth-child(3)", "9/5: Cabi Beach Club"],
-            [".intro-item:nth-child(1) b", "Nhịp điệu chuyến đi"],
-            [".intro-item:nth-child(1) p", "Mỗi ngày chỉ giữ một điểm chính; phần còn lại dành cho di chuyển, tắm rửa, nghỉ ngơi và những món muốn ăn bất chợt."],
-            [".intro-item:nth-child(2) b", "Trung tâm lưu trú"],
-            [".intro-item:nth-child(2) p", "Hai đêm đều ở Wyndham Garden Legend Halong, nên đường đi đơn giản hơn."],
-            [".intro-item:nth-child(3) b", "Ý tưởng bữa ăn"],
-            [".intro-item:nth-child(3) p", "Bữa sáng chủ yếu ở khách sạn, bữa trưa ăn hải sản hoặc ăn nhẹ, buổi tối ưu tiên không khí bên biển."],
             ["#day-0904 .day-badge span", "NGÀY 1"],
             ["#day-0904 .day-badge small", "2026/09/04 (Thứ Sáu)"],
             ["#day-0904-title", "Rời Hà Nội / nhận phòng Wyndham / bãi biển Bãi Cháy / Valley Beach Club"],
