@@ -173,13 +173,6 @@
       font-size: 1.08rem;
     }
 
-    .cover-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 24px;
-    }
-
     .button {
       min-height: 48px;
       display: inline-flex;
@@ -615,10 +608,6 @@
         font-size: 2.4rem;
       }
 
-      .cover-actions .button {
-        width: 100%;
-      }
-
       .day-nav .shell {
         width: 100%;
         padding-inline: 12px;
@@ -691,8 +680,7 @@
         box-shadow: none;
       }
 
-      .day-nav,
-      .cover-actions {
+      .day-nav {
         display: none;
       }
 
@@ -722,17 +710,6 @@
             這份行程先把「怎麼走、住哪裡、吃什麼」整理好。步調不用太滿，
             我們就照著天氣和體力慢慢玩，想休息的時候也不用硬撐。
           </p>
-          <div class="cover-actions">
-            <a class="button button-primary" href="#day-0904">看第一天</a>
-            <button class="button print-button" type="button" onclick="window.print()" aria-label="列印行程">
-              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 9V2h12v7"></path>
-                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-                <path d="M6 14h12v8H6z"></path>
-              </svg>
-              <span class="button-text">列印</span>
-            </button>
-          </div>
           <ul class="cover-facts" aria-label="行程重點">
             <li>住宿：Wyndham Garden Legend Halong</li>
             <li>9/4：Valley Beach Club</li>
@@ -747,7 +724,6 @@
             alt="晨光下的下龍灣海面、石灰岩山島與遊船"
             fetchpriority="high"
           >
-          <figcaption class="photo-label">下龍灣，慢慢來就好</figcaption>
         </figure>
       </section>
     </div>
@@ -1030,12 +1006,9 @@
             [".language-label", "語言"],
             ["#cover-title", "下龍灣三天兩夜小旅行"],
             [".cover-lead", "這份行程先把「怎麼走、住哪裡、吃什麼」整理好。步調不用太滿，我們就照著天氣和體力慢慢玩，想休息的時候也不用硬撐。"],
-            [".cover-actions .button-primary", "看第一天"],
-            [".print-button .button-text", "列印"],
             [".cover-facts li:nth-child(1)", "住宿：Wyndham Garden Legend Halong"],
             [".cover-facts li:nth-child(2)", "9/4：Valley Beach Club"],
             [".cover-facts li:nth-child(3)", "9/5：Cabi Beach Club"],
-            [".cover-photo .photo-label", "下龍灣，慢慢來就好"],
             [".intro-item:nth-child(1) b", "這次的節奏"],
             [".intro-item:nth-child(1) p", "一天抓一個主要重點，其他時間留給交通、洗澡、放空和臨時想吃的東西。"],
             [".intro-item:nth-child(2) b", "住宿中心"],
@@ -1123,7 +1096,6 @@
           aria: [
             [".language-bar", "語言切換"],
             [".language-toggle", "語言切換"],
-            [".print-button", "列印行程"],
             [".cover-facts", "行程重點"],
             [".day-nav", "行程導覽"]
           ]
@@ -1137,12 +1109,9 @@
             [".language-label", "Ngôn ngữ"],
             ["#cover-title", "Chuyến đi Hạ Long 3 ngày 2 đêm"],
             [".cover-lead", "Mình đã sắp xếp trước chuyện đi lại, chỗ ở và ăn uống. Lịch trình không cần quá dày; cứ theo thời tiết và sức khỏe mà đi chậm rãi, khi cần nghỉ thì nghỉ."],
-            [".cover-actions .button-primary", "Xem ngày đầu"],
-            [".print-button .button-text", "In lịch trình"],
             [".cover-facts li:nth-child(1)", "Khách sạn: Wyndham Garden Legend Halong"],
             [".cover-facts li:nth-child(2)", "9/4: Valley Beach Club"],
             [".cover-facts li:nth-child(3)", "9/5: Cabi Beach Club"],
-            [".cover-photo .photo-label", "Hạ Long, cứ thong thả là được"],
             [".intro-item:nth-child(1) b", "Nhịp điệu chuyến đi"],
             [".intro-item:nth-child(1) p", "Mỗi ngày chỉ giữ một điểm chính; phần còn lại dành cho di chuyển, tắm rửa, nghỉ ngơi và những món muốn ăn bất chợt."],
             [".intro-item:nth-child(2) b", "Trung tâm lưu trú"],
@@ -1230,7 +1199,6 @@
           aria: [
             [".language-bar", "Chuyển ngôn ngữ"],
             [".language-toggle", "Chuyển ngôn ngữ"],
-            [".print-button", "In lịch trình"],
             [".cover-facts", "Điểm chính của lịch trình"],
             [".day-nav", "Điều hướng lịch trình"]
           ]
